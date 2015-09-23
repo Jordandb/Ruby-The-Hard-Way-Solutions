@@ -1,0 +1,110 @@
+CHARACTER									INFORMATION								
+---------									-----------
+
+puts "Something"							puts everything on the screen and ends with a newline
+print "Something"							prints everything on the screen WITHOUT a newline
+# Something									you can comment something out while using the #-symbol
+=											takes the value of whats right and puts it in the variable left
+==											equal sign operator
+
+puts "#{some_variable}"						formatter parameter -> executes AND prints everything from the variable within the parentheses
+puts "#{'some_variable'}"					single quotes between parentheses just show and print the variable but DONT execute it
+puts "Execute: #{var1 + var2}"				another example
+some_variable.to_i							transforms the some_variable to an integer
+some_variable.to_s							transforms the some_variable to a a string
+some_variable.to_f							transforms the some_variable to a a float
+
+formatter = "%{first}, %{second}"
+puts formatter % {first: 1, second: 2}
+
+\n 											newline
+\t 											tab
+\\											backslash	
+
+"""											displays and prints everything like it was typed between the """ & """ quotes
+This is 
+my text
+"""		
+
+		-or alternative below-
+
+some_text_var = <<<END_OF_TEXT				same result as above.. INDENTION IS NECASSERY!!!
+This is 
+my text
+END_OF_TEXT
+
+input = gets.chomp							gets user input and stores it in variable in this case variable input
+
+first, second, third = ARGV					reads first, second and third parameter from command line when executing a ruby-file 
+											for ex: "ruby example.rb argument1 argument2 argument3"
+
+input = $stdin.gets.chomp					MUST be used when your ruby-file uses both ARGV and you also want to use user input, then you
+											have to make it explicit with this command
+
+open(filename_variable)						opens a file, for example: test.txt
+open(filename_variable, 'w')				opens a file and uses the 'w' for WRITE writing permission, you could also use 'r' which makes the next
+											command not necassary and is faster and cleaner because it requires less code
+print filename_variable.read				appending ".read" will read the opened file and ofcourse print will print it out
+
+filename_variable.truncate(0)				deletes everything (it can do way more but this is just an example) 
+											read more http://apidock.com/rails/String/truncate
+
+filename_variable.close						closes the file
+
+def some_method(arg1_var, arg2_var)			basic function/method which takes in two arguments for instance 1 and 2 and 
+	puts "You have given me #{arg1_var}"	returns there added value = 3
+	puts "and #{arg2_var}"
+	puts "I'm going to return the result"
+	puts "of adding them together"
+	return arg1_var + arg2_vars
+end
+
+sentence = "This is a sentence"				split method takes argument in this case an empty space and inspects the variable
+sentence.split(" ")							and splits up everything between the empty spaces and puts them in an array
+											so the following results in: 
+											sentence = ["This", "is", "a", "sentence"]
+											you could also give a parameter of (",") a comma for instance..
+
+
+sentence.sort								takes a variable which stores an array (like the above one) and sorts all the 												values in the array
+
+sentence = ["This", "is", "a", "sentence"]
+sentence.push("Var1", "Var2")				#sentence => ["This", "is", "a", "sentence", "Var1", "Var2"]
+sentence.unshift("Var3", "Var4")			#sentence => ["Var3", "Var4", "This", "is", "a", "sentence", "Var1", "Var2"]
+sentence.shift								#sentence => ["Var4", "This", "is", "a", "sentence", "Var1", "Var2"]
+sentence.pop								#sentence => ["Var4", "This", "is", "a", "sentence", "Var1"]
+
+fruits = ['apples', 'oranges', 'pears']		array of name fruits
+fruits.each do |fruit|						each-loop of array fruits
+	puts "A fruit of type: #{fruit}"
+end
+
+animals.each_with_index do |i, index|		each-loop with each_with_index method which gives us an index to display, ex34.rb
+	puts "#{i} is number #{index} in the array."
+end
+
+sentence = ["This", "is", "a", "sentence"]
+take_last_one = sentence.pop				takes the last value from an array and stores it in the var take_last_one
+add_one_to_last = sentence.push("blabla")	takes a value between parentheses and stores it as the last value in an array
+
+attr_accessor								http://stackoverflow.com/questions/4370960/what-is-attr-accessor-in-ruby
+											= attr_reader + attr_writer = getter and setter methods for instances of objects
+
+@some_var_name								instance variable = variable inside an instance of a class
+@@some_var_name								class variable = a variable that belongs to a class and can be used in all instances of
+											this class, it is shared among all instances and manipulating it in one instance, manipulates it across all instances automatically.
+											http://stackoverflow.com/questions/5890118/what-does-variable-mean-in-ruby
+
+inheritance vs composition					read more into this...
+
+require_relative
+
+
+
+
+
+
+
+
+
+
